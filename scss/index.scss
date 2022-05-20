@@ -56,6 +56,23 @@
     color: $brown-darken;
     background-color: transparent;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: $brown-darken;
+      color: $white;
+    }
+  }
+
+  &_type_filled {
+    background-image: linear-gradient(to top right, $brown-darken 0%, $brown 95%);
+    background-size: 300% 100%;
+    background-position: left bottom;
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+
+    &:hover {
+      box-shadow: 0px 4px 12px 5px rgba(170, 104, 65, 0.13);;
+    }
   }
 }
 
@@ -71,6 +88,10 @@
   &__container {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__logo {
+    width: 80px;
   }
 
   &__nav-list {
@@ -101,7 +122,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 90px;
+    margin-top: 135px;
   }
 
   &__title {
@@ -137,13 +158,14 @@
 
   &__paragraph {
     max-width: 370px;
-    margin: 52px auto 0;
+    margin: 102px auto 0;
     padding: 0 40px;
     font-size: 18px;
     font-weight: 400;
     text-align: center;
-    letter-spacing: 0.7px;
+    letter-spacing: 1px;
     color: $white;
+    opacity: 0.9;
   }
 
   &__row {
@@ -199,7 +221,7 @@
 }
 
 .portfolio {
-  scroll-margin-top: -120px;
+  scroll-margin-top: -150px;
   padding-top: 96px;
   padding-bottom: 128px;
   background-color: $dark-grey;
@@ -252,7 +274,7 @@
     display: flex;
     justify-content: center;
     column-gap: 20px;
-    max-width: 1100px;
+    max-width: 50%;
     margin: 45px auto 0;
     padding: 0;
     list-style: none;
@@ -309,10 +331,13 @@
   &__button-icon {
     width: 40px;
     height: 40px;
-    transform: scale(0.7) translateX(-7px) translateY(-3px);
+
+    &_to_prev {
+      transform: scale(0.7) translateX(-7px);
+    }
 
     &_to_next {
-      transform: scale(0.7) translateX(-4px) translateY(-3px);
+      transform: scale(0.7) translateX(-4px);
     }
   }
 
@@ -438,6 +463,8 @@
 }
 
 .map {
+  max-width: 1200px;
+  width: 100%;
   margin-bottom: 60px;
   opacity: 0.7;
 }
