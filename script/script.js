@@ -1,10 +1,3 @@
-// Slider Vars
-
-const dotsBlock = document.querySelector('.photo-grid__dots');
-const dots = document.querySelectorAll('.photo-grid__dot');
-const slides = document.querySelectorAll('.photo-grid__slide');
-let slideIndex = 1;
-
 // Full View Vars
 
 const photoGridItem = document.querySelectorAll('.photo-grid__photo');
@@ -12,9 +5,58 @@ const fullViewPopup = document.querySelector('.popup_full-view');
 const fullViewContainer = document.querySelector('.popup__container');
 const fullViewImg = fullViewPopup.querySelector('.popup__photo');
 
+// Slider Vars
+
+const dots = document.querySelectorAll('.photo-grid__dot');
+const dotsWrapper = document.querySelector('.photo-grid__dots');
+const slides = document.querySelectorAll('.photo-grid__slide');
+const prevBtn = document.querySelector('.photo-grid__button_to_prev');
+const nextBtn = document.querySelector('.photo-grid__button_to_next');
+let slideIndex = 1;
+
 // Slider
 
+showSlides(slideIndex);
 
+function showSlides(n) {
+  if (n < 1) {
+    slideIndex = slides.length;
+  } else if (n > slides.length) {
+    slideIndex = 1;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('photo-grid__slide_is_active');
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('photo-grid__dot_is_active');
+  }
+  slides[slideIndex - 1].classList.add('photo-grid__slide_is_active');
+  dots[slideIndex - 1].classList.add('photo-grid__dot_is_active');
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+prevBtn.addEventListener('click', function() {
+  plusSlides(-1);
+});
+
+nextBtn.addEventListener('click', function() {
+  plusSlides(1);
+});
+
+dotsWrapper.addEventListener('click', function(evt) {
+  for (let i = 0; i < dots.length + 1; i++) {
+    if (evt.target.classList.contains('photo-grid__dot') && evt.target == dots[i - 1]) {
+      currentSlide(i);
+    }
+  }
+});
 
 // Open & Close Popup
 
