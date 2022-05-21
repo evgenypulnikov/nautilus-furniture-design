@@ -482,13 +482,10 @@
 
   &__photo {
     display: block;
+    max-width: 80vw;
     max-height: 80vh;
     height: 100%;
     object-fit: cover;
-
-    @include _768 {
-      max-width: 80vw;
-    }
   }
 
   &__close {

@@ -609,16 +609,11 @@
 
 .popup__photo {
   display: block;
+  max-width: 80vw;
   max-height: 80vh;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-@media screen and (max-width: 768px) {
-  .popup__photo {
-    max-width: 80vw;
-  }
 }
 
 .popup__close {
