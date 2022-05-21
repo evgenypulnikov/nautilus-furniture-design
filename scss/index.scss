@@ -9,6 +9,11 @@
 .container {
   max-width: 1240px;
   margin: 0 auto;
+  padding: 0 34px;
+
+  @include _768 {
+    padding: 0 14px;
+  }
 }
 
 .section-title {
@@ -20,6 +25,10 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: $white-darken;
+
+  @include _768 {
+    font-size: 33px;
+  }
 }
 
 .section-subtitle {
@@ -32,6 +41,11 @@
   letter-spacing: 1px;
   text-transform: lowercase;
   color: $brown;
+
+  @include _768 {
+    margin: 28px 0 0;
+    font-size: 18px;
+  }
 }
 
 .page-link {
@@ -50,6 +64,11 @@
   color: $white;
   background-color: $brown-darken;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+
+  @include _768 {
+    padding: 16px 36px;
+    font-size: 16px;
+  }
 
   &_type_thin {
     border: 1px solid $brown-darken;
@@ -85,6 +104,10 @@
   box-shadow: 0px -30px 65px 0px rgba(0, 0, 0, 0.55);
   z-index: 2;
 
+  @include _768 {
+    padding: 22px 14px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -100,29 +123,54 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include _768 {
+      column-gap: 15px;
+    }
   }
 
   &__nav-link {
     font-size: 15px;
     color: $white;
+
+    @include _768 {
+      font-size: 13px;
+    }
   }
 }
 
 .intro {
   position: relative;
   padding-top: 58px;
-  padding-bottom: 174px;
+  padding-bottom: 154px;
   background-image: url('../images/intro-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   box-shadow: 0px 28px 79px 0px rgba(0, 0, 0, 0.25);
 
+  @include _768 {
+    padding-bottom: 134px;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 135px;
+
+    @include _768 {
+      margin-top: 95px;
+    }
+  }
+
+  &__column {
+    @include _1024 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -136,6 +184,15 @@
     color: $white;
     text-transform: uppercase;
     opacity: 0.8;
+
+    @include _1024 {
+      text-align: center;
+    }
+
+    @include _768 {
+      font-size: 41px;
+      line-height: 61px;
+    }
   }
 
   &__subtitle {
@@ -146,14 +203,23 @@
     line-height: 31px;
     letter-spacing: 1px;
     color: $brown;
+
+    @include _768 {
+      font-size: 18px;
+    }
   }
 
   &__photo {
-    max-width: 493px;
+    max-width: 533px;
     width: 100%;
     border-top-right-radius: 143px;
     border-bottom-left-radius: 143px;
     object-fit: cover;
+    opacity: 0.8;
+
+    @include _1024 {
+      display: none;
+    }
   }
 
   &__paragraph {
@@ -162,10 +228,16 @@
     padding: 0 40px;
     font-size: 18px;
     font-weight: 400;
-    text-align: center;
+    line-height: 23px;
     letter-spacing: 1px;
+    text-align: center;
     color: $white;
     opacity: 0.9;
+
+    @include _768 {
+      padding: 0;
+      font-size: 15px;
+    }
   }
 
   &__row {
@@ -192,6 +264,22 @@
     max-width: 1130px;
   }
 
+  &__title {
+    margin-left: 60px;
+
+    @include _768 {
+      margin-left: 20px;
+    }
+  }
+
+  &__subtitle {
+    margin-left: 60px;
+
+    @include _768 {
+      margin-left: 20px;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -199,7 +287,10 @@
     margin: 89px 0 0;
     padding: 0;
     list-style: none;
-    transform: translateX(-60px);
+
+    @include _768 {
+      max-width: 590px;
+    }
   }
 
   &__list-item {
@@ -209,10 +300,25 @@
     font-weight: 400;
     line-height: 28px;
     color: $white;
+
+    @include _1024 {
+      font-size: 17px;
+    }
+
+    @include _768 {
+      line-height: 26px;
+    }
   }
 
   &__icon {
+    min-width: 31px;
+    height: 31px;
     margin-right: 30px;
+
+    @include _768 {
+      min-width: 27px;
+      margin-right: 23px;
+    }
   }
 
   &__button {
@@ -368,6 +474,10 @@
 
   &__container {
     position: relative;
+
+    @include _768 {
+      top: 20px;
+    }
   }
 
   &__photo {
@@ -375,6 +485,10 @@
     max-height: 80vh;
     height: 100%;
     object-fit: cover;
+
+    @include _768 {
+      max-width: 80vw;
+    }
   }
 
   &__close {
@@ -386,6 +500,11 @@
     &:hover {
       cursor: pointer;
       opacity: 0.8;
+    }
+
+    @include _768 {
+      top: -50px;
+      right: 0;
     }
 
     &-svg {
@@ -400,6 +519,10 @@
   padding-bottom: 149px;
   background-color: $steel-blue;
 
+  @include _768 {
+    padding-bottom: 119px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -410,6 +533,15 @@
   &__row {
     display: flex;
     column-gap: 15%;
+    row-gap: 50px;
+
+    @include _1280 {
+      flex-wrap: wrap;
+    }
+
+    @include _1024 {
+      flex-direction: column;
+    }
   }
 
   &__link {
@@ -428,8 +560,26 @@
       opacity: 0.6;
     }
 
+    @include _1024 {
+      max-width: 340px;
+    }
+
+    @include _768 {
+      font-size: 17px;
+    }
+
     &_events_none:hover {
       opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 59px;
+    height: 59px;
+
+    @include _768 {
+      width: 39px;
+      height: 39px;
     }
   }
 }
@@ -438,6 +588,10 @@
   padding: 133px 0;
   background-color: $dark-grey;
 
+  @include _768 {
+    padding: 73px 0;
+  }
+
   &__container {
     max-width: 1200px;
   }
@@ -445,6 +599,12 @@
   &__row {
     display: flex;
     justify-content: space-between;
+
+    @include _768 {
+      flex-wrap: wrap;
+      column-gap: 35px;
+      row-gap: 20px;
+    }
   }
 
   &__copyright {
@@ -455,6 +615,10 @@
     letter-spacing: 1.1px;
     color: $white-copy;
     opacity: 0.7;
+
+    @include _768 {
+      font-size: 15px;
+    }
   }
 
   &__copyright.page-link:hover {
@@ -467,4 +631,8 @@
   width: 100%;
   margin-bottom: 60px;
   opacity: 0.7;
+
+  @include _768 {
+    max-height: 358px;
+  }
 }
