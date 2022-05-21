@@ -8,3 +8,23 @@ $brown-darken: #aa6841;
 $dark-grey: #212121;
 $light-grey: #555555;
 $white-copy: #e9e9e9;
+
+/* @media Mixins */
+
+@mixin _1280 {
+  @media screen and (max-width: 1280px){
+    @content;
+  }
+}
+
+@mixin _1024 {
+  @media screen and (max-width: 1024px){
+      @content;
+  }
+}
+
+@mixin _768 {
+  @media screen and (max-width: 768px){
+      @content;
+  }
+}
