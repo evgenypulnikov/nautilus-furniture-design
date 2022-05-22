@@ -14,6 +14,18 @@ const prevBtn = document.querySelector('.photo-grid__button_to_prev');
 const nextBtn = document.querySelector('.photo-grid__button_to_next');
 let slideIndex = 1;
 
+// Mobile Nav Vars
+
+const menuBtn = document.querySelector('.header__menu-button');
+const mobileMenu = document.querySelector('.header__nav');
+
+// Mobile Nav
+
+menuBtn.addEventListener('click', function() {
+  menuBtn.classList.toggle('header__menu-button_is_active');
+  mobileMenu.classList.toggle('header__nav_mobile_active');
+});
+
 // Slider
 
 showSlides(slideIndex);
