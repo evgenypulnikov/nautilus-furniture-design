@@ -114,7 +114,12 @@
   }
 
   &__logo {
-    width: 80px;
+    width: 120px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
   }
 
   &__nav-list {
@@ -439,11 +444,11 @@
     height: 40px;
 
     &_to_prev {
-      transform: scale(0.7) translateX(-7px);
+      transform: scale(1.1) translateX(-7px);
     }
 
     &_to_next {
-      transform: scale(0.7) translateX(-4px);
+      transform: scale(1.1) translateX(-4px);
     }
   }
 

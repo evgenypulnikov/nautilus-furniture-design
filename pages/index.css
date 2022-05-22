@@ -140,7 +140,16 @@
 }
 
 .header__logo {
-  width: 80px;
+  width: 120px;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav-list {
@@ -555,13 +564,13 @@
 }
 
 .photo-grid__button-icon_to_prev {
-  -webkit-transform: scale(0.7) translateX(-7px);
-          transform: scale(0.7) translateX(-7px);
+  -webkit-transform: scale(1.1) translateX(-7px);
+          transform: scale(1.1) translateX(-7px);
 }
 
 .photo-grid__button-icon_to_next {
-  -webkit-transform: scale(0.7) translateX(-4px);
-          transform: scale(0.7) translateX(-4px);
+  -webkit-transform: scale(1.1) translateX(-4px);
+          transform: scale(1.1) translateX(-4px);
 }
 
 .photo-grid__icon-path {
