@@ -1,3 +1,5 @@
+const popupsContainers = document.querySelectorAll('.popup__container');
+
 // Full View Vars
 
 const photoGridItem = document.querySelectorAll('.photo-grid__photo');
@@ -74,6 +76,18 @@ dotsWrapper.addEventListener('click', function(evt) {
 
 function openPopup(popup) {
   popup.classList.add('popup_is_opened');
+
+  document.addEventListener('keydown', function(evt) {
+    if (evt.key === 'Escape' && popup.classList.contains('popup_is_opened')) {
+      popup.classList.remove('popup_is_opened');
+    }
+  });
+
+  popup.addEventListener('click', function() {
+    if (popup.classList.contains('popup_is_opened')) {
+      popup.classList.remove('popup_is_opened');
+    }
+  });
 }
 
 function closePopup(popup) {
@@ -106,5 +120,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
+  });
+});
+
+// Exlude Content From Overlay
+
+popupsContainers.forEach(function(elem) {
+  elem.addEventListener('click', function(evt) {
+    evt.stopPropagation();
   });
 });

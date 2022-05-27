@@ -161,6 +161,7 @@
     border: none;
     background-color: transparent;
     transform: scale(0.7);
+    cursor: pointer;
 
     @include _768 {
       display: block;
@@ -505,6 +506,10 @@
   transition: visibility 0.4s ease-out, opacity 0.4s ease-out;
   z-index: 3;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &_is_opened {
     visibility: visible;
     opacity: 1;
@@ -512,6 +517,11 @@
 
   &__container {
     position: relative;
+    padding: 0;
+
+  &:hover {
+    cursor: auto;
+  }
 
     @include _768 {
       top: 20px;
